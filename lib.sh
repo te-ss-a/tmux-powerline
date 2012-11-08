@@ -56,6 +56,9 @@ print_status_line_right() {
 	      continue
     	fi
   fi
+    if [ -z "$output" ]; then
+      continue
+    fi
 	__ui_right "$prev_bg" "$background" "$foreground" "$separator" "$separator_fg"
 	echo -n "$output"
 	unset output

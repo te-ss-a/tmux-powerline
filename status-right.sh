@@ -26,9 +26,9 @@ pwd+=(["separator"]="${separator_left_bold}")
 #register_segment "pwd"
 
 declare -A mail_count
-mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
+#mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
 #mail_count+=(["script"]="${segments_path}/mail_count_gmail.sh")
-#mail_count+=(["script"]="${segments_path}/mail_count_apple_mail.sh")
+mail_count+=(["script"]="${segments_path}/mail_count_apple_mail.sh")
 mail_count+=(["foreground"]="white")
 mail_count+=(["background"]="red")
 mail_count+=(["separator"]="${separator_left_bold}")
