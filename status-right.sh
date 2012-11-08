@@ -21,8 +21,8 @@ mute_status_check "right"
 declare -A pwd
 pwd+=(["script"]="${segments_path}/pwd.sh")
 pwd+=(["foreground"]="colour211")
-pwd+=(["background"]="colour89")
-pwd+=(["separator"]="${separator_left_bold}")
+pwd+=(["background"]="colour237")
+pwd+=(["separator"]="${separator_left_thin}")
 #register_segment "pwd"
 
 declare -A mail_count
@@ -30,8 +30,8 @@ declare -A mail_count
 #mail_count+=(["script"]="${segments_path}/mail_count_gmail.sh")
 mail_count+=(["script"]="${segments_path}/mail_count_apple_mail.sh")
 mail_count+=(["foreground"]="white")
-mail_count+=(["background"]="red")
-mail_count+=(["separator"]="${separator_left_bold}")
+mail_count+=(["background"]="colour237")
+mail_count+=(["separator"]="${separator_left_thin}")
 register_segment "mail_count"
 
 declare -A now_playing
@@ -49,23 +49,25 @@ elif [ "$PLATFORM" == "mac" ]; then
 fi
 if [[ ${now_playing["script"]} ]]; then
 	now_playing+=(["foreground"]="colour37")
-	now_playing+=(["background"]="colour234")
-	now_playing+=(["separator"]="${separator_left_bold}")
+	now_playing+=(["background"]="colour237")
+	now_playing+=(["separator"]="${separator_left_thin}")
+	now_playing+=(["separator_fg"]="colour37")
 	register_segment "now_playing"
 fi
 
 declare -A cpu
 cpu+=(["script"]="${segments_path}/cpu.sh")
 cpu+=(["foreground"]="colour136")
-cpu+=(["background"]="colour240")
-cpu+=(["separator"]="${separator_left_bold}")
+cpu+=(["background"]="colour237")
+cpu+=(["separator"]="${separator_left_thin}")
 #register_segment "cpu"
 
 declare -A load
 load+=(["script"]="${segments_path}/load.sh")
 load+=(["foreground"]="colour167")
 load+=(["background"]="colour237")
-load+=(["separator"]="${separator_left_bold}")
+load+=(["separator"]="${separator_left_thin}")
+load+=(["separator_fg"]="colour167")
 register_segment "load"
 
 declare -A battery
@@ -75,48 +77,49 @@ else
 	battery+=(["script"]="${segments_path}/battery.sh")
 fi
 battery+=(["foreground"]="colour127")
-battery+=(["background"]="colour137")
-battery+=(["separator"]="${separator_left_bold}")
+battery+=(["background"]="colour237")
+battery+=(["separator"]="${separator_left_thin}")
 #register_segment "battery"
 
 declare -A weather
 weather+=(["script"]="${segments_path}/weather_yahoo.sh")
 #weather+=(["script"]="${segments_path}/weather_google.sh")
 weather+=(["foreground"]="colour255")
-weather+=(["background"]="colour37")
-weather+=(["separator"]="${separator_left_bold}")
-register_segment "weather"
+weather+=(["background"]="colour237")
+weather+=(["separator"]="${separator_left_thin}")
+#register_segment "weather"
 
 declare -A xkb_layout
 if [ "$PLATFORM" == "linux" ]; then
 	xkb_layout+=(["script"]="${segments_path}/xkb_layout.sh")
 	xkb_layout+=(["foreground"]="colour117")
-	xkb_layout+=(["background"]="colour125")
-	xkb_layout+=(["separator"]="${separator_left_bold}")
+	xkb_layout+=(["background"]="colour237")
+	xkb_layout+=(["separator"]="${separator_left_thin}")
 fi
 #register_segment "xkb_layout"
 
 declare -A date_day
 date_day+=(["script"]="${segments_path}/date_day.sh")
 date_day+=(["foreground"]="colour136")
-date_day+=(["background"]="colour235")
-date_day+=(["separator"]="${separator_left_bold}")
+date_day+=(["background"]="colour237")
+date_day+=(["separator"]="${separator_left_thin}")
+date_day+=(["separator_fg"]="colour136")
 register_segment "date_day"
 
 declare -A date_full
 date_full+=(["script"]="${segments_path}/date_full.sh")
 date_full+=(["foreground"]="colour136")
-date_full+=(["background"]="colour235")
+date_full+=(["background"]="colour237")
 date_full+=(["separator"]="${separator_left_thin}")
-date_full+=(["separator_fg"]="default")
+date_full+=(["separator_fg"]="colour240")
 register_segment "date_full"
 
 declare -A time
 time+=(["script"]="${segments_path}/time.sh")
 time+=(["foreground"]="colour136")
-time+=(["background"]="colour235")
+time+=(["background"]="colour237")
 time+=(["separator"]="${separator_left_thin}")
-time+=(["separator_fg"]="default")
+time+=(["separator_fg"]="colour240")
 register_segment "time"
 
 # Print the status line in the order of registration above.
